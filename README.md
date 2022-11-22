@@ -14,3 +14,25 @@ Example can be:
 2. Pulling `mongodb` and `mongoexpress` Docker images
 3. Running both images in their containers inside mongo-network (specifying by passing a flag arg)
 4. `mongodb` and `mongoexpress` now running inside `mongo-network`
+
+#### Port Binding
+Docker port binding is a technique to allow multiple Docker images listen to their respective ports even if they both running on same ports. This is done via port binding command.
+
+##### How it works?
+We bind every Docker image port to listen to their respective HOST (each HOST cannot have some ports shared). 
+
+You can think port binding like this:
+`... -p PORT:HOST ...` where `PORT` is actual the port where your Docker image is listening to and `HOST` is your machine port bound with Docker image `PORT`.
+
+This technique is very useful especially when you running two same Docker containers with different versions like PostgesSQL v14.XX and PostgresSQL < v14.XX because both PostgresSQL containers will listen to exact same port which you can't decide which container to connect. Under such scenarios port binding plays a very useful technique.
+
+### Commands
+* `docker pull [image]` - to pull image from Docker Hub
+* `docker run [image]` - to start a Docker container
+* `docker run [flags] [image]` - to start a Docker container with flags
+* `docker start [container_id]` - to restart a Docker container
+* `docker stop [container_id]` - to stop a Docker container
+* `docker ps -a` - to get history of all ended/up containers
+* `docker ps` - to list all running containers
+* `docker logs [container_id] or [container_name]`- to display logs of running container
+* `docker exec -it [container_id] /bin/bash` - to get access as a root user for Linux terminal
