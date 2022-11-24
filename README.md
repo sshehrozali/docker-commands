@@ -27,6 +27,8 @@ You can think port binding like this:
 This technique is very useful especially when you running two same Docker containers with different versions like PostgesSQL v14.XX and PostgresSQL < v14.XX because both PostgresSQL containers will listen to exact same port which you can't decide which container to connect. Under such scenarios port binding plays a very useful technique.
 
 ### Commands
+
+#### Containerization
 * `docker pull [image]` - to pull image from Docker Hub
 * `docker run [image]` - to start a Docker container
 * `docker run [flags] [image]` - to start a Docker container with flags
@@ -34,12 +36,19 @@ This technique is very useful especially when you running two same Docker contai
 * `docker stop [container_id]` - to stop a Docker container
 * `docker build -t [container_name]:[version]` - to build an image with a Dockerfile
 * `docker rm [container_id]` - to remove a container
+
+#### Images
 * `docker images` - to list all Docker images
+* `docker push [image_name]:version` - to push a Docker image to Docker registry or any private Docker repository (AWS ECR, etc.)
+* `docker tag -a [current_image_name] [new_image_name]` - to rename a Docker image
+
+#### Logs
 * `docker ps -a` - to get history of all ended/up containers
 * `docker ps -a | grep [container_name]` - to see history of a specific container
 * `docker ps` - to list all running containers
 * `docker logs [container_id] or [container_name]`- to display logs of running container
-* `docker exec -it [container_id] /bin/bash` - to get access as a root user for Linux terminal
+* `docker exec -it [container_id] /bin/bash` - to get access as a root user for Bash
+* `docker exec -it [container_id] /bin/sh` - to get access as a root user for Shell
 
 #### Example use-case for starting mongodb container
 `docker run -d \
