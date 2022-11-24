@@ -34,6 +34,7 @@ This technique is very useful especially when you running two same Docker contai
 * `docker stop [container_id]` - to stop a Docker container
 * `docker build -t [container_name]:[version]` - to build an image with a Dockerfile
 * `docker rm [container_id]` - to remove a container
+* `docker images` - to list all Docker images
 * `docker ps -a` - to get history of all ended/up containers
 * `docker ps -a | grep [container_name]` - to see history of a specific container
 * `docker ps` - to list all running containers
