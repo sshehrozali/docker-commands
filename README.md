@@ -32,7 +32,10 @@ This technique is very useful especially when you running two same Docker contai
 * `docker run [flags] [image]` - to start a Docker container with flags
 * `docker start [container_id]` - to restart a Docker container
 * `docker stop [container_id]` - to stop a Docker container
+* `docker build -t [container_name]:[version]` - to build an image with a Dockerfile
+* `docker rm [container_id]` - to remove a container
 * `docker ps -a` - to get history of all ended/up containers
+* `docker ps -a | grep [container_name]` - to see history of a specific container
 * `docker ps` - to list all running containers
 * `docker logs [container_id] or [container_name]`- to display logs of running container
 * `docker exec -it [container_id] /bin/bash` - to get access as a root user for Linux terminal
