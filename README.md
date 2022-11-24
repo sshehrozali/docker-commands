@@ -36,3 +36,19 @@ This technique is very useful especially when you running two same Docker contai
 * `docker ps` - to list all running containers
 * `docker logs [container_id] or [container_name]`- to display logs of running container
 * `docker exec -it [container_id] /bin/bash` - to get access as a root user for Linux terminal
+
+#### Example use-case for starting mongodb container
+`docker run -d \
+--name mongodb \
+-p 27017:27017 \
+-e MONGO-INITDB_ROOT_USERNAME=admin \
+MONGO-INITDB_ROOT_PASSWORD=password \
+--net mongo-network \
+mongo`
+
+Flags:
+* d: Start in detach mode
+* name: Name of the container
+* p: Port binding
+* e: Environment variables
+* net: Specifying which network to run in
